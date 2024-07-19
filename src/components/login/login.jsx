@@ -1,38 +1,40 @@
 import './login.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import config from '../../config'; 
+import { useNavigate } from 'react-router-dom';
+import config from '../../config'; // Import the configuration
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
 
-
     const handleSignupRedirect = (e) => {
         e.preventDefault();
         console.log("Email:" + email);
         console.log("Password:" + password);
 
-        axios.post(`${config.apiBaseUrl}/login/`, {
+        axios.post(`${config.apiBaseUrl}/login/`, { 
             email,
             password,
         })
             .then(response => {
                 if (response.status === 200) {
                     console.log("redirect now");
-                    navigate('/home');
+                    navigate('/home'); 
                 }
-                console.log(response);
             })
             .catch(error => {
                 console.error(error);
+                toast.error("Login failed. Please check your credentials and try again.");
             });
     };
 
     return (
         <div className="login">
+            <ToastContainer />
             <h4>Login</h4>
             <form>
                 <div className="text_area">

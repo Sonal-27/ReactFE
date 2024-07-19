@@ -1,8 +1,10 @@
 import './signup.css';
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import config from '../../config'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignUp =() => {
@@ -20,18 +22,18 @@ const SignUp =() => {
             username
         })
       .then(response => {
-          if(response.status == 201){
+          if(response.status === 201){
             navigate('/login');
           }
       })
       .catch(error => {
           console.error(error);
+          toast.error("registration failed. Please enter valid information");
       });
-      redirect()
-        
     };
     return (
       <div className="signup">
+        <ToastContainer />
         <h4>SignUp</h4>
         <form>
 
