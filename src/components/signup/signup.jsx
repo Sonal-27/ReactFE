@@ -1,5 +1,5 @@
 import './signup.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import config from '../../config'; 
@@ -80,7 +80,7 @@ const SignUp =() => {
           />
           <div className="link">Already have an account?
         <br></br>
-        <a href="/login">Login</a>
+        <Link to="/login">Login</Link>
         </div>
         </form>
         

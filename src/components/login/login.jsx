@@ -1,7 +1,7 @@
 import './login.css';
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import config from '../../config'; // Import the configuration
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -67,7 +67,7 @@ const Login = () => {
                 />
                 <div className="link">Don't have an account?
                     <br />
-                    <a href="/signup">Sign Up</a>
+                    <Link to="/signup">Login</Link>
                 </div>
             </form>
         </div>
