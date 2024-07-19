@@ -2,8 +2,7 @@ import './signup.css';
 import { redirect, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-
-
+import config from '../../config'; 
 
 
 const SignUp =() => {
@@ -15,8 +14,8 @@ const SignUp =() => {
     const handleSignupRedirect = (e) => {
 
       e.preventDefault();
-      axios.post('http://3.128.179.244:8000/api/register/', {
-            email,
+      axios.post(`${config.apiBaseUrl}/register/`, {
+        email,
             password,
             username
         })

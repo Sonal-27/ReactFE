@@ -1,25 +1,29 @@
+// src/Login.js
 import './login.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import config from '../../config'; 
 
 const Login = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [redirect, setRedirect] = useState(false);
+    const navigate = useNavigate();
+
 
     const handleSignupRedirect = (e) => {
         e.preventDefault();
         console.log("Email:" + email);
         console.log("Password:" + password);
 
-        axios.post('http://3.128.179.244:8000/api/login/', {
+        axios.post(`${config.apiBaseUrl}/login/`, {
             email,
             password,
         })
             .then(response => {
                 if (response.status === 200) {
-                    setRedirect(true);
+                    console.log("redirect now");
+                    navigate('/home');
                 }
                 console.log(response);
             })
@@ -27,10 +31,6 @@ const Login = () => {
                 console.error(error);
             });
     };
-
-    if (redirect) {
-        return <Navigate to="/home" />;
-    }
 
     return (
         <div className="login">
