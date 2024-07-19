@@ -20,7 +20,9 @@ const SignUp =() => {
             username
         })
       .then(response => {
-          console.log(response);
+          if(response.status == 201){
+            navigate('/login');
+          }
       })
       .catch(error => {
           console.error(error);
