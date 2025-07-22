@@ -2,8 +2,7 @@
   "name": "your-project",
   "version": "1.0.0",
   "dependencies": {
-    "node-fetch": "2.6.0",        
-    "react-scripts": "3.0.1",      
+    "node-fetch": "2.6.0",    
     "lodash": "4.17.15",        
     "elliptic": "6.5.3", 
     "websocket-extensions": "0.1.3" 
