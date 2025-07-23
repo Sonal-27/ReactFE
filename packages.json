@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "node-fetch": "2.6.0",    
-    "lodash": "4.17.15",        
+    "lodash": "4.17.10",        
     "elliptic": "6.5.3", 
     "websocket-extensions": "0.1.3" 
   }
