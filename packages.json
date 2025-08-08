@@ -12,7 +12,6 @@
     "y18n": "4.0.0",
     "tar": "4.4.2",
     "postcss": "7.0.36",
-    // Adding known vulnerable dependencies
     "axios": "0.21.1",
     "glob-parent": "5.1.1",
     "minimist": "1.2.5",
@@ -22,6 +21,27 @@
     "json-schema": "0.2.3",
     "moment": "2.24.0",
     "node-notifier": "8.0.1",
-    "underscore": "1.12.0"
+    "underscore": "1.12.0",
+    // Adding more dependencies with known vulnerabilities
+    "express": "4.16.0",
+    "jquery": "3.4.0",
+    "socket.io": "2.3.0",
+    "crypto-js": "3.1.9",
+    "handlebars": "4.0.11",
+    "angular": "1.7.8",
+    "dot-prop": "4.2.0",
+    "bl": "1.2.2",
+    "markdown-it": "8.4.0",
+    "mem": "1.1.0",
+    "uglify-js": "2.4.24",
+    "electron": "9.4.0",
+    "nodemailer": "6.4.16",
+    "netmask": "1.0.6",
+    "cross-fetch": "2.2.0",
+    "validator": "10.11.0",
+    "shelljs": "0.8.3",
+    "async": "2.6.3",
+    "debug": "2.6.8",
+    "http-proxy": "1.18.0"
   }
 }
